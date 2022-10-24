@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-image: url(akash.jpg);
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .hero {
+            top: 50%;
+            left: 22%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            /* font-family: sans-serif; */
+        }
+        
+        h1 {
+            font-size: 40px;
+            letter-spacing: 5px;
+        }
+        
+        hr {
+            width: 50%;
+            margin: 30px auto;
+            border: 1.5px solid white;
+        }
+        
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        #launch {
+            font-size: 30px;
+            word-spacing: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hero">
+            <img src="cake.png" width="250" height="250">
+            <p>It's almost here, and I'm so excited. Four more days until my birthday.</p>
+            <h1>Coming Soon</h1>
+            <hr>
+            <p id="launch"></p>
+        </div>
+    </header>
+</body>
+<script>
+    var countDownDate = new Date("Jan 28, 2023 00:00:00").getTime();
+
+    var x = setInterval(function() {
+
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("launch").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById('launch').innerHTML = "EXPIRED";
+        }
+
+    }, 1000);
+</script>
+
+</html>

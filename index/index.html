@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        border: 1px solid black;
+        height: 180vh;
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+        grid-template-areas: "box1 box1 box1 box1""box2 box2 box3 box3""box4 box4 box4 box4""box5 box5 box5 box5""box6 box6 box6 box6";
+    }
+    
+    .box1 {
+        border: 1px solid black;
+        display: flex;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+        width: 98.50%;
+        height: 80px;
+        position: fixed;
+        background-color: darkgray;
+        grid-area: box1;
+    }
+    
+    .box1 p {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    #search {
+        height: 30px;
+    }
+    
+    .box1 ul li {
+        list-style: none;
+        display: inline-block;
+        position: relative;
+        margin: 0 20px;
+    }
+    
+    .box1 ul li a {
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+    }
+    
+    .box1 ul li::after {
+        content: '';
+        height: 3px;
+        width: 0;
+        background: lightslategray;
+        color: orange;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
+    
+    .box1 ul li:hover::after {
+        width: 100%;
+        color: orange;
+    }
+    
+    .btn {
+        margin: 10px;
+        padding: 10px;
+        margin-left: 50px;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    
+    .box2 {
+        border: 1px solid black;
+        display: flex;
+        grid-area: box2;
+        height: 250px;
+        background-color: darkmagenta;
+        margin-top: 30px;
+    }
+    
+    .box3 {
+        border: 1px solid black;
+        display: flex;
+        grid-area: box3;
+        background-color: darkorange;
+        height: 250px;
+        margin-top: 30px;
+    }
+    
+    .box4 {
+        border: 1px solid black;
+        display: flex;
+        grid-area: box4;
+        height: 300px;
+        background-color: deeppink;
+    }
+    
+    .box5 {
+        border: 1px solid black;
+        display: flex;
+        grid-area: box5;
+        height: 300px;
+        background-color: deepskyblue;
+    }
+    
+    .box6 {
+        border: 1px solid black;
+        display: flex;
+        height: 250px;
+        grid-area: box6;
+        background-color: lightslategray;
+    }
+    
+    @media only screen and(max-width:550px) {
+        .container {
+            grid-template-columns: 0.2fr;
+            grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+            grid-template-areas: "box1""box2""box3""box4""box5""box6";
+        }
+        .box1 {
+            justify-content: start;
+            width: -10%;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Info</a></li>
+            </ul>
+            <input type="Search" id="search" placeholder="Search">
+            <div class="btn">
+                <button>Sing In</button>
+                <button>Sing Up</button>
+
+            </div>
+        </div>
+        <div class="box2">
+            <img src="/akash.jpg" alt="">
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus aliquid aut numquam expedita ipsum, quod odit cum delectus enim impedit eos et corporis quo suscipit? Earum alias fugiat ea! Cum.</p>
+        </div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+
+    </div>
+</body>
+
+</html>
